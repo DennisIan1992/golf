@@ -1,0 +1,13 @@
+<h1>Standings</h1>
+<div class="content">
+    <button ng-click="order = 'name'">Order by Owner</button> 
+    <button ng-click="order = 'teamName'">Order by Team Name</button>  
+    <button ng-click="order = 'seasonTotal">Order by Season Total</button> 
+    <input type="text" ng-model="search" placeholder="Search Owners" />
+    <ul class="greenwhite" >
+    <li ng-repeat="owner in owners | orderBy: order | filter: search">
+        <h3>{{owner.name}} / {{owner.teamName}}</h3> 
+        <span>{{owner.seasonTotal | currency}}</span>
+    </li>
+    </ul>
+</div>
