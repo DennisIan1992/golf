@@ -1,0 +1,28 @@
+<h1>Teams</h1>
+<div class="content"> 
+    <input type="text" ng-model="search" placeholder="Search Owners" />    
+        <table>
+            <tr>
+                <th>Owner</th>
+                <th>Golfer 1</th>
+                <th>Golfer 2</th>
+                <th>Golfer 3</th>
+                <th>Golfer 4</th>
+                <th>Golfer 5</th>
+                <th>Golfer 6</th>
+                <th>Golfer 7</th>
+                <th>Golfer 8</th>
+            </tr>
+            <tr ng-repeat="team in teams">
+                <td>{{team.Owner}}</td>
+                <td>{{team.one}}</td>
+                <td>{{team.two}}</td>
+                <td>{{team.three}}</td>
+                <td>{{team.four}}</td>
+                <td>{{team.five}}</td>
+                <td>{{team.six}}</td>
+                <td>{{team.seven}}</td>
+                <td>{{team.eight}}</td>
+            </tr>
+        </table>  
+</div>
