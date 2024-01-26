@@ -1,0 +1,25 @@
+<h1>Tournaments</h1>
+<div class="content"> 
+    <table>
+        <tr>
+            <th>TournamentID</th>
+            <th>Tournament</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Course</th>
+            <th>Yardage</th>
+            <th>Par</th>
+            <th>Purse</th>
+        </tr>
+        <tr ng-repeat="tournament in tournaments | orderBy: 'StartDate' | filter: greaterThan('StartDate') " >
+            <td>{{tournament.TournamentID}}</td>
+            <td>{{tournament.Name}}</td>
+            <td>{{tournament.StartDate | date: "MM/dd/yyyy"}}</td>
+            <td>{{tournament.EndDate | date: "MM/dd/yyyy"}}</td>
+            <td>{{tournament.Venue}}</td>
+            <td>{{tournament.Yards}}</td>
+            <td>{{tournament.Par}}</td>
+            <td>{{tournament.Purse | currency}}</td>
+        </tr>
+    </table>         
+</div>

@@ -1,0 +1,25 @@
+<h1>Leaderboard</h1>
+<div class="content"> 
+    <table>
+        <tr>
+            <th>TournamentID</th>
+            <th>Tournament</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Course</th>
+            <th>Yardage</th>
+            <th>Par</th>
+            <th>Purse</th>
+        </tr>
+        <tr ng-repeat="leaderboard in leaderboardJson | orderBy: 'Name'  " >
+            <td>{{leaderboard.TournamentID}}</td>
+            <td>{{leaderboard.Name}}</td>
+            <td>{{leaderboard.StartDate | date: "MM/dd/yyyy"}}</td>
+            <td>{{leaderboard.EndDate | date: "MM/dd/yyyy"}}</td>
+            <td>{{leaderboard.Venue}}</td>
+            <td>{{leaderboard.Yards}}</td>
+            <td>{{leaderboard.Par}}</td>
+            <td>{{leaderboard.Purse | currency}}</td>
+        </tr>
+    </table>         
+</div>

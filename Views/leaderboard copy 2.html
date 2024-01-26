@@ -1,0 +1,29 @@
+<h1>Leaderboard</h1>
+<div class="content"> 
+    <ul>
+        <li>Tournament: {{leaderboardJson.events[0].name}}</li> 
+        <table>
+            <tr>
+                <th text-align="left">Name</th>
+                <th>Position</th>
+                <th>Thru</th>
+                <th>R1</th>
+                <th>R2</th>
+                <th>R3</th>
+                <th>R4</th>
+                <th>Total</th>
+            </tr>
+            <tr ng-repeat="leaderboard in leaderboardJson.events[0].competitions[0].competitors" ng-show="leaderboard.status.type.state == 'pre'">
+                <td text-align="left">{{leaderboard.athlete.displayName}}</td>
+                <td>{{leaderboard.status.position.displayName}}</td>
+                <td>{{leaderboard.status.thru}}</td>
+                <td>{{leaderboard.linescores[0].teeTime | date: "hh:mm a"}}</td>
+                <td>{{leaderboard.linescores[1].teeTime | date: "hh:mm a"}}</td>
+                <td>-</td>
+                <td>-</td>
+                <td>{{leaderboard.score.displayValue}}</td>
+            </tr>
+        </table> 
+        <li ng-repeat="leaderboard in leaderboardJson.events[0].competitions[0].competitors | orderBy: 'leaderboard.status.teeTime'" ng-show="leaderboard.status.type.state != 'pre'"> {{leaderboard.athlete.shortName}} - {{leaderboard.status.teeTime | date: "hh:mm a"}}</li>       
+    </ul>       
+</div>

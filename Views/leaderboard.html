@@ -1,0 +1,28 @@
+<h1>Leaderboard</h1>
+<div class="content"> 
+    <ul>
+        <li>Tournament: {{lb.events[0].name}}</li> 
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Thru</th>
+                <th>-R1-</th>
+                <th>-R2-</th>
+                <th>-R3-</th>
+                <th>-R4-</th>
+                <th>Total</th>
+            </tr>
+            <tr ng-repeat="leaderboard in lc | orderBy: 'rank'">
+                <td>{{leaderboard.name}}</td>
+                <td>{{leaderboard.position}}</td>
+                <td>{{leaderboard.thru}}</td>
+                <td>{{leaderboard.roundOne}}</td>
+                <td>{{leaderboard.roundTwo}}</td>
+                <td>{{leaderboard.roundThree}}</td>
+                <td>{{leaderboard.roundFour}}</td>
+                <td>{{leaderboard.total}}</td>
+            </tr>
+        </table> 
+        </ul>       
+</div>

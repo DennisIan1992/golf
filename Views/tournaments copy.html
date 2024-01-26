@@ -1,0 +1,31 @@
+<h1>Teams</h1>
+<div class="content"> 
+    <input type="text" ng-model="search" placeholder="Search Owners" />    
+        <table>
+            <tr>
+                <th>Owner</th>
+                <th>Golfer 1</th>
+                <th>Golfer 2</th>
+                <th>Golfer 3</th>
+                <th>Golfer 4</th>
+            </tr>
+            <tr ng-repeat="tournament in tournaments | orderBy: 'StartDate' | filter: greaterThan('StartDate') " >
+                <td>{{tournament.TournamentID}}</td>
+                <td>{{tournament.Name}}</td>
+                <td>{{tournament.StartDate | date: "MM/dd/yyyy"}}</td>
+                <td>{{tournament.EndDate | date: "MM/dd/yyyy"}}</td>
+                <td>{{tournament.Venue}}</td>
+                <td>{{tournament.IsOver}}</td>
+            </tr>
+        </table> 
+        <ul> 
+            <li ng-repeat="tournament in tournaments | orderBy: 'StartDate' | filter: greaterThan('StartDate') " >
+                {{tournament.TournamentID}} - {{tournament.Name}} - {{tournament.StartDate | date: "MM/dd/yyyy"}} - {{tournament.EndDate | date: "MM/dd/yyyy"}} - {{tournament.Venue}} - {{tournament.IsOver}}
+            </li>
+        </ul>
+        <ul> 
+            <li ng-repeat="tournament in tournaments | orderBy: 'StartDate' | filter: greaterThan('StartDate') " >
+                {{tournament.TournamentID}} - {{tournament.Name}} - {{tournament.StartDate | date: "MM/dd/yyyy"}} - {{tournament.EndDate | date: "MM/dd/yyyy"}} - {{tournament.Venue}} - {{tournament.IsOver}}
+            </li>
+        </ul>
+</div>
