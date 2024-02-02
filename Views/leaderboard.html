@@ -1,7 +1,7 @@
 <h1>Leaderboard</h1>
-<div class="content"> 
+<div class="content">
+    <h2>Tournament: {{lb.events[0].name}}</h2>   
     <ul>
-        <li>Tournament: {{lb.events[0].name}}</li> 
         <table>
             <tr>
                 <th>Name</th>
@@ -12,8 +12,9 @@
                 <th>-R3-</th>
                 <th>-R4-</th>
                 <th>Total</th>
+                <th>Earnings</th>
             </tr>
-            <tr ng-repeat="leaderboard in lc | orderBy: 'rank'">
+            <tr ng-repeat="leaderboard in lc | orderBy: ['rank', 'name']">
                 <td>{{leaderboard.name}}</td>
                 <td>{{leaderboard.position}}</td>
                 <td>{{leaderboard.thru}}</td>
@@ -21,7 +22,8 @@
                 <td>{{leaderboard.roundTwo}}</td>
                 <td>{{leaderboard.roundThree}}</td>
                 <td>{{leaderboard.roundFour}}</td>
-                <td>{{leaderboard.total}}</td>
+                <td>{{leaderboard.total}}</td>                
+                <td>{{leaderboard.earnings}}</td>
             </tr>
         </table> 
         </ul>       

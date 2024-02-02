@@ -1,9 +1,16 @@
 <h1>Teams</h1>
 <div class="content"> 
-    <input type="text" ng-model="search" placeholder="Search Owners" />    
+    <div>
+        <button ng-click="weekSelect = ''">Show All</button>
+        <button ng-click="weekSelect = '4'" ng-show="false">Week 4</button>        
+        <button ng-click="weekSelect = '3'">Week 3</button>
+        <button ng-click="weekSelect = '2'">Week 2</button>
+        <button ng-click="weekSelect = '1'">Week 1</button> 
+    </div>    
         <table>
             <tr>
                 <th>Owner</th>
+                <th>Week</th>
                 <th>Golfer 1</th>
                 <th>Golfer 2</th>
                 <th>Golfer 3</th>
@@ -13,8 +20,9 @@
                 <th>Golfer 7</th>
                 <th>Golfer 8</th>
             </tr>
-            <tr ng-repeat="team in objTeams">
+            <tr ng-repeat="team in objTeams | orderBy: ['-week', 'owner'] | filter: weekSelect">
                 <td>{{team.owner}}</td>
+                <td>{{team.week}}</td>
                 <td>{{team.gone}}</td>
                 <td>{{team.gtwo}}</td>
                 <td>{{team.gthree}}</td>

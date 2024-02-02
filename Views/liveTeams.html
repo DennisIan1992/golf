@@ -1,0 +1,225 @@
+<h1>Live Teams</h1>
+<div class="content">  
+    <h2>Tournament: {{lb.events[0].name}}</h2>  
+    <h3>Owner</h3>
+    <button ng-click="ownerSelect = ''">Show All</button>
+    <button ng-click="ownerSelect = 'Austin'">Austin</button>
+    <button ng-click="ownerSelect = 'Benjamin'">Benjamin</button>
+    <button ng-click="ownerSelect = 'Brady'">Brady</button>
+    <button ng-click="ownerSelect = 'Dalton'">Dalton</button>
+    <button ng-click="ownerSelect = 'Evan'">Evan</button>
+    <button ng-click="ownerSelect = 'Grant'">Grant</button>
+    <button ng-click="ownerSelect = 'Ian'">Ian</button> 
+    <button ng-click="ownerSelect = 'Kirby'">Kirby</button>       
+    <button ng-click="ownerSelect = 'Oakes'">Oakes</button>   
+    <button ng-click="ownerSelect = 'Patrick'">Patrick</button> 
+    <button ng-click="ownerSelect = 'Stehl'">Stehl</button> 
+        <table>
+            <tr>
+                <th>Owner</th>
+                <th>Golfer 1</th>
+                <th>Golfer 2</th>
+                <th>Golfer 3</th>
+                <th>Golfer 4</th>
+                <th>Golfer 5</th>
+                <th>Golfer 6</th>
+                <th>Golfer 7</th>
+                <th>Golfer 8</th>
+            </tr>
+            <tr ng-repeat="team in liveTeams | orderBy: 'owner' | filter: {owner: ownerSelect}">
+                <td>{{team.owner}}</td>
+                <td>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pos</th>
+                            <th>Thru</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th>
+                            <th>R4</th>                        
+                            <th>Total</th>
+                        </tr>
+                        <tr ng-repeat="one in team.gone[0]">
+                            <td>{{one.name}}</td>
+                            <td>{{one.position}}</td>
+                            <td>{{one.thru}}</td>
+                            <td>{{one.roundOne}}</td>
+                            <td>{{one.roundTwo}}</td>
+                            <td>{{one.roundThree}}</td>
+                            <td>{{one.roundFour}}</td>
+                            <td>{{one.total}}</td>
+                        </tr>
+                    </table>
+                </td>      
+                <td>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pos</th>
+                            <th>Thru</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th>
+                            <th>R4</th>                        
+                            <th>Total</th>
+                        </tr>
+                        <tr ng-repeat="two in team.gtwo[0]">
+                            <td>{{two.name}}</td>
+                            <td>{{two.position}}</td>
+                            <td>{{two.thru}}</td>
+                            <td>{{two.roundOne}}</td>
+                            <td>{{two.roundTwo}}</td>
+                            <td>{{two.roundThree}}</td>
+                            <td>{{two.roundFour}}</td>
+                            <td>{{two.total}}</td>
+                        </tr>
+                    </table>
+                </td>    
+                <td>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pos</th>
+                            <th>Thru</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th>
+                            <th>R4</th>                        
+                            <th>Total</th>
+                        </tr>
+                        <tr ng-repeat="three in team.gthree[0]">
+                            <td>{{three.name}}</td>
+                            <td>{{three.position}}</td>
+                            <td>{{three.thru}}</td>
+                            <td>{{three.roundOne}}</td>
+                            <td>{{three.roundTwo}}</td>
+                            <td>{{three.roundThree}}</td>
+                            <td>{{three.roundFour}}</td>
+                            <td>{{three.total}}</td>
+                        </tr>
+                    </table>
+                </td>      
+                <td>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pos</th>
+                            <th>Thru</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th>
+                            <th>R4</th>                        
+                            <th>Total</th>
+                        </tr>
+                        <tr ng-repeat="four in team.gfour[0]">
+                            <td>{{four.name}}</td>
+                            <td>{{four.position}}</td>
+                            <td>{{four.thru}}</td>
+                            <td>{{four.roundOne}}</td>
+                            <td>{{four.roundTwo}}</td>
+                            <td>{{four.roundThree}}</td>
+                            <td>{{four.roundFour}}</td>
+                            <td>{{four.total}}</td>
+                        </tr>
+                    </table>
+                </td> 
+                <td>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pos</th>
+                            <th>Thru</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th>
+                            <th>R4</th>                        
+                            <th>Total</th>
+                        </tr>
+                        <tr ng-repeat="five in team.gfive[0]">
+                            <td>{{five.name}}</td>
+                            <td>{{five.position}}</td>
+                            <td>{{five.thru}}</td>
+                            <td>{{five.roundOne}}</td>
+                            <td>{{five.roundTwo}}</td>
+                            <td>{{five.roundThree}}</td>
+                            <td>{{five.roundFour}}</td>
+                            <td>{{five.total}}</td>
+                        </tr>
+                    </table>
+                </td>      
+                <td>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pos</th>
+                            <th>Thru</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th>
+                            <th>R4</th>                        
+                            <th>Total</th>
+                        </tr>
+                        <tr ng-repeat="six in team.gsix[0]">
+                            <td>{{six.name}}</td>
+                            <td>{{six.position}}</td>
+                            <td>{{six.thru}}</td>
+                            <td>{{six.roundOne}}</td>
+                            <td>{{six.roundTwo}}</td>
+                            <td>{{six.roundThree}}</td>
+                            <td>{{six.roundFour}}</td>
+                            <td>{{six.total}}</td>
+                        </tr>
+                    </table>
+                </td>    
+                <td>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pos</th>
+                            <th>Thru</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th>
+                            <th>R4</th>                        
+                            <th>Total</th>
+                        </tr>
+                        <tr ng-repeat="seven in team.gseven[0]">
+                            <td>{{seven.name}}</td>
+                            <td>{{seven.position}}</td>
+                            <td>{{seven.thru}}</td>
+                            <td>{{seven.roundOne}}</td>
+                            <td>{{seven.roundTwo}}</td>
+                            <td>{{seven.roundThree}}</td>
+                            <td>{{seven.roundFour}}</td>
+                            <td>{{seven.total}}</td>
+                        </tr>
+                    </table>
+                </td>      
+                <td>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pos</th>
+                            <th>Thru</th>
+                            <th>R1</th>
+                            <th>R2</th>
+                            <th>R3</th>
+                            <th>R4</th>                        
+                            <th>Total</th>
+                        </tr>
+                        <tr ng-repeat="eight in team.geight[0]">
+                            <td>{{eight.name}}</td>
+                            <td>{{eight.position}}</td>
+                            <td>{{eight.thru}}</td>
+                            <td>{{eight.roundOne}}</td>
+                            <td>{{eight.roundTwo}}</td>
+                            <td>{{eight.roundThree}}</td>
+                            <td>{{eight.roundFour}}</td>
+                            <td>{{eight.total}}</td>
+                        </tr>
+                    </table>
+                </td>         
+            </tr>
+        </table>  
+</div>
